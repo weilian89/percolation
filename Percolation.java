@@ -112,7 +112,7 @@ public class Percolation {
 	}
 	
     public boolean isFull(int row, int col) {
-        return this.openCount == n*n;
+        return !isOpen(row, col);
     }
 	
 	public int numberOfOpenSites() {
