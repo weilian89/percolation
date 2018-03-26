@@ -9,6 +9,7 @@ public class Percolation {
 		this.n = n;
 		this.openCount = 0;
 		this.sites = new int[n*n + 2];
+		this.weight = new int[n*n+2];
 		this.isOpenSites = new boolean[n*n+2];
 		
 		for(int i = 0;i<isOpenSites.length;i++) {
@@ -18,6 +19,7 @@ public class Percolation {
 		isOpenSites[isOpenSites.length-1] = true;
 		for(int i = 0;i<sites.length;i++) {
 			this.sites[i] = i;
+			this.weight[i] = 1;
 		}
 	}
 	
@@ -122,6 +124,12 @@ public class Percolation {
 	}
 	
     public static void main(String[] args) {
+		Percolation p = new Percolation(6);
+		
+		for(int i = 1;i<=6;i++) {
+			p.open(i, 3);
+			System.out.println(p.percolates());
+		}
 	
 	}
 }
